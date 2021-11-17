@@ -64,10 +64,10 @@ This stage downloads approximately 200 MB and takes 800 MB of your storage after
 * Saves the configuration data on the following address:
   * `~/.local/share/data/Mendeley Ltd./Mendeley Desktop-docker`  
   * `~/.config/docker-apps`
-* Mount the following directory to save the `pdf` persistently on the host machine
+* Mounts the following directory to save the `pdf` persistently on the host machine
   * `~/Documents/Mendeley Desktop-docker`
 
-## Configure a script to run it from you `PATH`
+## Configure a script to run it from your `PATH`
 
 ```bash
 $ echo "#!/bin/bash
@@ -78,11 +78,12 @@ cd "$currentDir" | sudo tee /usr/local/bin/mdd
 
 $ sudo chmod a+x /usr/local/bin/mdd
 ```
+Now running `mdd` in terminal will load the `mendeley-docker`. 
 
 ## Miscellaneous
 
 * `clean.sh` deletes all configuration files and the saved `PDF`s
-* `wipeout.sh` purge your host machine from the `mendeley-docker` and all related files. 
+* `wipeout.sh` purges your host machine from the `mendeley-docker`'s image and all related files. 
 
 
 
