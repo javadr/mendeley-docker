@@ -62,11 +62,15 @@ This stage downloads approximately 200 MB and takes 800 MB of your storage after
 ```
 
 * It runs Mendeley-Desktop inside the Ubuntu 20.04 (LTS) forwarding the X windows on your host.
+
 * Saves the configuration data on the following address:
   * `~/.local/share/data/Mendeley Ltd./Mendeley Desktop-docker`  
   * `~/.config/docker-apps`
-* Mounts the following directory to save the `pdf` persistently on the host machine
+  
+* Mounts the following directory to save the `pdf` persistently on the host machine, however, should be set in the Mendeley Options once; see below image
   * `~/Documents/Mendeley Desktop-docker`
+  
+    <img src="mendeley-options.png" style="zoom:67%;" />
 
 ## Configure a script to run it from your `PATH`
 
