@@ -72,9 +72,9 @@ This stage downloads approximately 200 MB and takes 800 MB of your storage after
 ```bash
 $ echo "#!/bin/bash
 currentDir="$(pwd)"
-cd "/PATH-TO/mendeley-docker"
-source run.sh
-cd "$currentDir" | sudo tee /usr/local/bin/mdd
+cd "/PATH-TO/mendeley-docker" || exit
+source run.sh &
+cd "$currentDir" | sudo tee /usr/local/bin/mdd || exit
 
 $ sudo chmod a+x /usr/local/bin/mdd
 ```
