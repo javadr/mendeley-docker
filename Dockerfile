@@ -4,10 +4,12 @@ MAINTAINER Javad Razavian, Version 0.1
 
 ARG VERSION
 
+
+COPY /tmp/mendeleydesktop_${VERSION}-stable_amd64.deb /tmp/mendeleydesktop.deb
+
 # Setting up the system
 RUN apt-get update && \ 
     apt-get install -y --no-install-recommends \
-        ca-certificates \
         python \
         gconf2 \
         desktop-file-utils \
@@ -22,10 +24,7 @@ RUN apt-get update && \
         libasound2 \
         libxcursor1 \
         libfreetype6 \
-        libfontconfig1 \
-        curl && \
-    curl https://desktop-download.mendeley.com/download/apt/pool/main/m/mendeleydesktop/mendeleydesktop_${VERSION}-stable_amd64.deb \
-         --output /tmp/mendeleydesktop.deb && \
+        libfontconfig1 && \
     dpkg -i /tmp/mendeleydesktop.deb && \
     apt-get -qqy install -f && \
     apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* && \
