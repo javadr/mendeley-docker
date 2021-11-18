@@ -27,6 +27,7 @@ RUN apt-get update && \
     curl https://desktop-download.mendeley.com/download/apt/pool/main/m/mendeleydesktop/mendeleydesktop_${VERSION}-stable_amd64.deb \
          --output /tmp/mendeleydesktop.deb && \
     dpkg -i /tmp/mendeleydesktop.deb && \
+    apt-get autoremove curl ca-certificates -y && \
     apt-get -qqy install -f && \
     apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* && \
     mkdir -p /usr/share/X11/xkb && \
