@@ -90,6 +90,6 @@ Now running `mdd` in terminal will load the `mendeley-docker`.
 
 ## Todo 
 
-* [] Resolve ownership issue; all files are saved with `root:root` ownership in the host machine
-* [] Download Mendeley Desktop file outside the docker; makes docker image more concise as installation of some packages like `curl` could be neglected
-* [] Prepare a desktop launcher
+* [ ] Resolve ownership issue; all files are saved with `root:root` ownership in the host machine
+* [ ] Download Mendeley Desktop file outside the docker; makes docker image more concise as installation of some packages like `curl` could be neglected
+* [ ] Prepare a desktop launcher
