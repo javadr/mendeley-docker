@@ -89,5 +89,4 @@ Now running `mdd` in terminal will load the `mendeley-docker`.
 
 ## Todo 
 
-* [] Resolve ownership issue; the configuration files are saved with `root` ownership
-
+* [] Resolve ownership issue; all files are saved with `root:root` ownership in the host machine
