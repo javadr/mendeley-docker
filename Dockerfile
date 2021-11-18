@@ -5,7 +5,7 @@ MAINTAINER Javad Razavian, Version 0.1
 ARG VERSION
 
 
-COPY /tmp/mendeleydesktop_${VERSION}-stable_amd64.deb /tmp/mendeleydesktop.deb
+COPY mendeleydesktop_${VERSION}-stable_amd64.deb /tmp/mendeleydesktop.deb
 
 # Setting up the system
 RUN apt-get update && \ 

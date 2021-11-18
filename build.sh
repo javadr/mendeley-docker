@@ -18,7 +18,7 @@ if [ ! -e mendeleydesktop_${MDDVERSION}-stable_amd64.deb ]; then
 fi
 
 # Building the Docker image
-docker build --no-cache --force-rm \
+docker build --no-cache --force-rm --compress \
     --build-arg VERSION="$MDDVERSION" \
     -t "javadr/mendeley-desktop_docker:${MDDVERSION}" .
 echo Built "javadr/mendeley-desktop_docker:${MDDVERSION}"
