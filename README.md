@@ -83,7 +83,28 @@ cd "$currentDir" || exit '| sudo tee /usr/local/bin/mdd
 
 $ sudo chmod a+x /usr/local/bin/mdd
 ```
-Now running `mdd` in terminal will load the `mendeley-docker`. 
+Replace the `PATH-TO` with the path of `mendeley-docker`. Now running `mdd` in terminal will load the `mendeley-docker`. 
+
+## How to create Desktop launcher
+
+```bash
+$echo "[Desktop Entry]
+Name=Mendeley Desktop [Docker]
+GenericName=Research Paper Manager
+Comment=Mendeley Desktop is software for managing and sharing research papers
+Exec=bash -c 'cd "/PATH-TO/mendeley-docker" || exit && source run.sh &'
+Icon=mendeley
+Terminal=false
+Type=Application
+Categories=Education;Literature;Qt;
+X-SuSE-translate=false
+MimeType=x-scheme-handler/mendeley;application/pdf;text/x-bibtex;
+X-Mendeley-Version=1" > ~/.local/share/applications/mendeleydesktop+docker.desktop
+
+$ cp /PATH-TO/mendeley-docker/mendeley.png ~/.icons
+```
+
+
 
 ## Miscellaneous
 
@@ -96,4 +117,5 @@ Now running `mdd` in terminal will load the `mendeley-docker`.
 
 * [ ] Resolve ownership issue; all files are saved with `root:root` ownership in the host machine
 * [ ] Download Mendeley Desktop file outside the docker; makes docker image more concise as installation of some packages like `curl` could be neglected
-* [ ] Prepare a desktop launcher
+* [x] Prepare a desktop launcher
+* [ ] `Makefile` instead of  `build.sh`, `clean.sh`, `wipeout.sh`
