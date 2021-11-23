@@ -88,7 +88,7 @@ Replace the `PATH-TO` with the path of `mendeley-docker`. Now running `mdd` in t
 ## How to create Desktop launcher
 
 ```bash
-$echo "[Desktop Entry]
+$ echo "[Desktop Entry]
 Name=Mendeley Desktop [Docker]
 GenericName=Research Paper Manager
 Comment=Mendeley Desktop is software for managing and sharing research papers
