@@ -70,7 +70,7 @@ This stage downloads approximately 200 MB and takes 800 MB of your storage after
 * Mounts the following directory to save the `pdf` persistently on the host machine, however, should be set in the Mendeley Options once; see below image
   * `~/Documents/Mendeley Desktop-docker`
   
-    <img src="mendeley-options.png" style="zoom:67%;" />
+    <img src="images/mendeley-options.png" style="zoom:67%;" />
 
 ## Configure a script to run it from your `PATH`
 
@@ -101,7 +101,7 @@ X-SuSE-translate=false
 MimeType=x-scheme-handler/mendeley;application/pdf;text/x-bibtex;
 X-Mendeley-Version=1" > ~/.local/share/applications/mendeleydesktop+docker.desktop
 
-$ cp /PATH-TO/mendeley-docker/mendeley.png ~/.icons
+$ cp /PATH-TO/mendeley-docker/images/mendeley.png ~/.icons
 ```
 
 
