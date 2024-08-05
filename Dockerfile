@@ -1,6 +1,8 @@
 FROM ubuntu:20.04
 
-MAINTAINER Javad Razavian, Version 0.1
+LABEL maintainer="Javad Razavian"
+LABEL version="0.1.1"
+LABEL description="This image installs mendeleydesktop"
 
 ARG VERSION
 
@@ -25,13 +27,14 @@ RUN apt-get update && \
         libfontconfig1 \
         curl && \
     curl https://desktop-download.mendeley.com/download/apt/pool/main/m/mendeleydesktop/mendeleydesktop_${VERSION}-stable_amd64.deb \
-         --output /tmp/mendeleydesktop.deb && \
+        --output /tmp/mendeleydesktop.deb && \
     dpkg -i /tmp/mendeleydesktop.deb && \
     apt-get autoremove curl ca-certificates -y && \
     apt-get -qqy install -f && \
     apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* && \
     mkdir -p /usr/share/X11/xkb && \
-    mkdir -p /tmp/runtime-root
+    mkdir -p /tmp/runtime-root && \
+    rm -r /usr/local/share/man /usr/local/man
 
 ENV QT_XKB_CONFIG_ROOT=/usr/share/X11/xkb
 ENV DISPLAY :0
